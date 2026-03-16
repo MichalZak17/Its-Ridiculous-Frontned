@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RandomExcuse from '../components/RandomExcuse.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const categories = [
+  { name: 'pets', description: 'Blame your furry companions' },
+  { name: 'tech', description: 'Technology conspiracies' },
+  { name: 'family', description: 'Family drama excuses' },
+  { name: 'weather', description: 'Acts of nature' },
+  { name: 'existential', description: 'Philosophical dilemmas' },
+  { name: 'health', description: 'Mysterious ailments' },
+  { name: 'time', description: 'Time-bending excuses' },
+  { name: 'supernatural', description: 'Paranormal interference' },
+  { name: 'school', description: 'Institutional chaos' },
+  { name: 'creative', description: 'Pure imagination' },
+];
+---
+
+<Layout title="It's Ridiculous — Homework Excuse Generator">
+  <!-- Hero -->
+  <section class="px-5 sm:px-6 pt-14 sm:pt-28 pb-10 sm:pb-20">
+    <div class="max-w-[980px] mx-auto text-center">
+      <p class="text-accent text-sm sm:text-sm font-medium tracking-wide uppercase mb-4">120 excuses. 10 categories. 0% success rate.</p>
+      <h1 class="font-display text-[2.5rem] sm:text-6xl lg:text-7xl font-extrabold text-fg tracking-tight leading-[1.05] mb-5">
+        The world's most ridiculous homework excuses.
+      </h1>
+      <p class="text-fg-secondary text-lg sm:text-lg max-w-xl mx-auto leading-relaxed">
+        Rated by absurdity. Complete with predicted teacher reactions.
+        For entertainment purposes only.
+      </p>
+    </div>
+  </section>
+
+  <div class="max-w-[980px] mx-auto px-5 sm:px-6"><hr class="border-separator/40" /></div>
+
+  <!-- Random Generator -->
+  <section class="px-5 sm:px-6 py-12 sm:py-20">
+    <div class="max-w-[980px] mx-auto">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-fg tracking-tight text-center mb-2">
+        Try your luck.
+      </h2>
+      <p class="text-fg-secondary text-base sm:text-sm text-center mb-8">
+        One tap. One excuse. Infinite disappointment from your teacher.
+      </p>
+      <RandomExcuse />
+    </div>
+  </section>
+
+  <div class="max-w-[980px] mx-auto px-5 sm:px-6"><hr class="border-separator/40" /></div>
+
+  <!-- Categories -->
+  <section class="px-5 sm:px-6 py-12 sm:py-20">
+    <div class="max-w-[980px] mx-auto">
+      <h2 class="font-display text-2xl sm:text-3xl font-bold text-fg tracking-tight text-center mb-2">
+        Browse by category.
+      </h2>
+      <p class="text-fg-secondary text-base sm:text-sm text-center mb-8">
+        10 ways to explain why your homework doesn't exist.
+      </p>
+
+      <div class="max-w-lg mx-auto">
+        {categories.map(cat => (
+          <CategoryCard category={cat.name} description={cat.description} />
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/explore" class="text-accent hover:text-accent-hover text-base sm:text-sm font-medium transition-colors">
+          View all excuses →
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

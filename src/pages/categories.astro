@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CategoryCard from '../components/CategoryCard.astro';
+
+const categories = [
+  { name: 'pets', description: 'Blame your furry, feathery, or scaly companions for your academic failures.' },
+  { name: 'tech', description: 'When technology conspires against your education.' },
+  { name: 'family', description: 'Drag your entire family into your academic excuses.' },
+  { name: 'weather', description: 'Mother Nature does not want you to do homework.' },
+  { name: 'existential', description: 'When homework makes you question the fabric of reality.' },
+  { name: 'health', description: 'Mysterious and highly specific medical conditions.' },
+  { name: 'time', description: 'Time itself has turned against your academic pursuits.' },
+  { name: 'supernatural', description: 'Paranormal entities with a vendetta against homework.' },
+  { name: 'school', description: 'The school system is somehow responsible.' },
+  { name: 'creative', description: 'Excuses so creative they deserve their own grade.' },
+];
+---
+
+<Layout title="Categories — It's Ridiculous">
+  <section class="px-5 sm:px-6 py-8 sm:py-12">
+    <div class="max-w-[980px] mx-auto">
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-fg tracking-tight mb-1">
+        Categories.
+      </h1>
+      <p class="text-fg-secondary text-base sm:text-sm mb-10">
+        10 categories. 12 excuses each. All equally unlikely to work.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12">
+        {categories.map(cat => (
+          <CategoryCard category={cat.name} description={cat.description} />
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

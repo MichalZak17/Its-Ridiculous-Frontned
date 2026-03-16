@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — It's Ridiculous">
+  <section class="px-5 sm:px-6 py-8 sm:py-12">
+    <div class="max-w-[600px] mx-auto">
+      <h1 class="font-display text-3xl sm:text-4xl font-bold text-fg tracking-tight mb-1">
+        About.
+      </h1>
+      <p class="text-fg-secondary text-base sm:text-sm mb-10">
+        The story behind the world's most ridiculous homework excuses.
+      </p>
+
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-fg font-semibold text-lg sm:text-[15px] mb-2">What is this?</h2>
+          <p class="text-fg-secondary text-base sm:text-sm leading-relaxed">
+            It's Ridiculous is a collection of 120 absurd homework excuses.
+            Each one is rated for absurdity, tagged with a category, given a success prediction
+            (spoiler: low), and paired with an imagined teacher reaction. It exists purely
+            for entertainment.
+          </p>
+        </div>
+
+        <hr class="border-separator/40" />
+
+        <div>
+          <h2 class="text-fg font-semibold text-lg sm:text-[15px] mb-2">The API</h2>
+          <p class="text-fg-secondary text-base sm:text-sm leading-relaxed mb-4">
+            This site is powered by the
+            <a
+              href="https://github.com/MichalZak17/Its-Ridiculous-API"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-accent hover:text-accent-hover transition-colors"
+            >It's Ridiculous API</a>
+            — a REST API built with Hono and TypeScript, deployed on Vercel.
+          </p>
+          <div class="bg-bg-elevated rounded-xl p-4 text-base sm:text-sm font-mono space-y-2.5 sm:space-y-2 overflow-x-auto">
+            <p><span class="text-success">GET</span> <span class="text-fg-secondary ml-2">/api/excuse</span></p>
+            <p><span class="text-success">GET</span> <span class="text-fg-secondary ml-2">/api/excuse/:id</span></p>
+            <p><span class="text-success">GET</span> <span class="text-fg-secondary ml-2">/api/excuses</span></p>
+            <p><span class="text-success">GET</span> <span class="text-fg-secondary ml-2">/api/categories</span></p>
+          </div>
+        </div>
+
+        <hr class="border-separator/40" />
+
+        <div>
+          <h2 class="text-fg font-semibold text-lg sm:text-[15px] mb-3">Tech stack</h2>
+          <div class="grid grid-cols-2 gap-5 sm:gap-4 text-base sm:text-sm">
+            <div>
+              <p class="text-fg font-medium">Frontend</p>
+              <p class="text-fg-tertiary">Astro, Tailwind CSS</p>
+            </div>
+            <div>
+              <p class="text-fg font-medium">API</p>
+              <p class="text-fg-tertiary">Hono, TypeScript</p>
+            </div>
+            <div>
+              <p class="text-fg font-medium">Validation</p>
+              <p class="text-fg-tertiary">Zod, OpenAPI</p>
+            </div>
+            <div>
+              <p class="text-fg font-medium">Hosting</p>
+              <p class="text-fg-tertiary">Vercel</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="border-separator/40" />
+
+        <div>
+          <h2 class="text-fg font-semibold text-lg sm:text-[15px] mb-2">Disclaimer</h2>
+          <p class="text-fg-secondary text-base sm:text-sm leading-relaxed">
+            These excuses are for entertainment only. We are not responsible for any
+            academic consequences. Your teacher will not believe you.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
